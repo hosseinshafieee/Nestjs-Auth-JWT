@@ -3,10 +3,10 @@ import { AuthService } from './auth.service';
 
 @Resolver()
 export class AuthResolver {
-    constructor(private readonly authService: AuthService) {}
+    constructor(private authService: AuthService) {}
 
     @Query(() => String) 
     async hello() {
-        return await this.authService
+        return await this.authService.Login()
     }
 }
