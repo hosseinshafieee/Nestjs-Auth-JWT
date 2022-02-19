@@ -4,6 +4,7 @@ import { AuthResolver } from './auth.resolver';
 
 
 @Module({
-  providers: [ AuthResolver]
+  providers: [ AuthResolver, AuthService]
+
 })
 export class AuthModule {}

@@ -1,12 +1,14 @@
-import { Resolver,Query } from '@nestjs/graphql';
+import { Resolver,Query, Args } from '@nestjs/graphql';
 import { AuthService } from './auth.service';
+import { AuthDto } from './dto/auth.dto';
 
 @Resolver()
 export class AuthResolver {
-    constructor(private readonly authService: AuthService) {}
+    constructor(private authService: AuthService) {}
 
     @Query(() => String) 
-    async hello() {
-        return await this.authService
+    async hello(@Args('inputs') authDto: AuthDto) {
+        const {email, password} = authDto;
+        return await this.authService.Login(email, password)
     }
 }
