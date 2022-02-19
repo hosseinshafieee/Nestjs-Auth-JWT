@@ -8,5 +8,5 @@ input AuthDto {
 }
 
 type Query {
-  hello(inputs: AuthDto!): String!
+  login(inputs: AuthDto!): String!
 }

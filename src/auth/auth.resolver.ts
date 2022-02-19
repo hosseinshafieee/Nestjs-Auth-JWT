@@ -7,7 +7,7 @@ export class AuthResolver {
     constructor(private authService: AuthService) {}
 
     @Query(() => String) 
-    async hello(@Args('inputs') authDto: AuthDto) {
+    async login(@Args('inputs') authDto: AuthDto) {
         const {email, password} = authDto;
         return await this.authService.Login(email, password)
     }
