@@ -7,6 +7,16 @@ input AuthDto {
   password: String!
 }
 
+type Mutation {
+  register(inputs: RegisterDto!): String!
+}
+
 type Query {
-  hello(inputs: AuthDto!): String!
+  login(inputs: AuthDto!): String!
+}
+
+input RegisterDto {
+  email: String!
+  name: String!
+  password: String!
 }
