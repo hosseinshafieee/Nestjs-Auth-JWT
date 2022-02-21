@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Users, UsersDocument, UsersSchema } from './Schemas/users.schema';
+import { Users, UsersDocument, UsersSchema } from '../users/Schemas/users.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
