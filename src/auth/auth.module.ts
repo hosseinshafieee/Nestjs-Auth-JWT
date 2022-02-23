@@ -5,6 +5,7 @@ import {Users, UsersSchema} from '../users/Schemas/users.schema'
 import { MongooseModule } from '@nestjs/mongoose';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
+import { TokenServices } from './JWT/jwt';
 
 
 
@@ -13,7 +14,7 @@ import { JwtModule } from '@nestjs/jwt';
     secret: "jwtConstants.secret",
     signOptions: { expiresIn: '60s' },
   })],
-  providers: [ AuthResolver, AuthService]
+  providers: [ AuthResolver, AuthService, TokenServices]
 
 })
 export class AuthModule {}
