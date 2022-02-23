@@ -8,7 +8,7 @@ input AuthDto {
 }
 
 type Mutation {
-  register(inputs: RegisterDto!): String!
+  register(inputs: RegisterDto!): TokensDto!
 }
 
 type Query {
@@ -19,4 +19,10 @@ input RegisterDto {
   email: String!
   name: String!
   password: String!
+}
+
+type TokensDto {
+  access_token: String
+  msg: String
+  refresh_token: String
 }
